@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+  <rect width="1100" height="620" fill="#f7f7f5"/>
+  <text x="550" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#111">Diagram A  Basket definition (composition)</text>
+  <text x="550" y="68" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#555">1 LEEA is defined as the sum of all seven components below (AND, not OR)</text>
+
+  <rect x="420" y="100" width="260" height="70" rx="8" fill="#1a1a1a"/>
+  <text x="550" y="142" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#fff">1 LEEA</text>
+
+  <!-- connectors -->
+  <line x1="550" y1="170" x2="550" y2="210" stroke="#333" stroke-width="2"/>
+  <line x1="90" y1="210" x2="1010" y2="210" stroke="#333" stroke-width="2"/>
+  <line x1="90" y1="210" x2="90" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="245" y1="210" x2="245" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="400" y1="210" x2="400" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="555" y1="210" x2="555" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="710" y1="210" x2="710" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="865" y1="210" x2="865" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="1010" y1="210" x2="1010" y2="240" stroke="#333" stroke-width="2"/>
+
+  <!-- commodity cards -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="20" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="90" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Water</text>
+    <text x="90" y="300" text-anchor="middle" font-size="18" fill="#111">1 kg</text>
+
+    <rect x="175" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="245" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Rice</text>
+    <text x="245" y="300" text-anchor="middle" font-size="18" fill="#111">1 kg</text>
+
+    <rect x="330" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="400" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Fish</text>
+    <text x="400" y="300" text-anchor="middle" font-size="18" fill="#111">1 kg</text>
+
+    <rect x="485" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="555" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Electricity</text>
+    <text x="555" y="300" text-anchor="middle" font-size="18" fill="#111">1 kWh</text>
+
+    <rect x="640" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="710" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Ag. Land</text>
+    <text x="710" y="288" text-anchor="middle" font-size="12" fill="#555">Index</text>
+    <text x="710" y="312" text-anchor="middle" font-size="18" fill="#111">1 sq ft</text>
+
+    <rect x="795" y="240" width="140" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="865" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#111">Steel</text>
+    <text x="865" y="300" text-anchor="middle" font-size="18" fill="#111">1 kg</text>
+
+    <rect x="950" y="240" width="130" height="90" rx="8" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="1015" y="268" text-anchor="middle" font-size="13" font-weight="700" fill="#111">Constr.</text>
+    <text x="1015" y="288" text-anchor="middle" font-size="12" fill="#555">Sand</text>
+    <text x="1015" y="312" text-anchor="middle" font-size="18" fill="#111">1 kg</text>
+  </g>
+
+  <rect x="80" y="380" width="940" height="180" rx="10" fill="#fff" stroke="#888" stroke-width="1"/>
+  <text x="550" y="415" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#111">Approval note</text>
+  <text x="110" y="450" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">" The basket is an index / peg composition. It answers: What is 1 LEEA made of?</text>
+  <text x="110" y="480" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">" Holding 1 LEEA does not mean the holder simultaneously owns all seven physical units.</text>
+  <text x="110" y="510" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">" Redemption uses a separate OR menu (Diagram B), not this basket 1:1.</text>
+  <text x="110" y="540" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">" Implementation stores BASKET and REDEMPTION_OPTIONS as two distinct constants.</text>
+</svg>

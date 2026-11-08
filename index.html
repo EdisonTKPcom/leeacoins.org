@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./assets/peace.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeeaCoins</title>
+    <script type="module" crossorigin src="./assets/index-DsodIdcV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-7Sb0xo1t.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- #region agent log -->
+    <script>
+    (function () {
+      var ENDPOINT = 'http://127.0.0.1:7942/ingest/0471cf81-94f6-481e-bce7-d2eec5bc2d3a';
+      var SESSION = '66957d';
+      function send(hypothesisId, location, message, data) {
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': SESSION },
+          body: JSON.stringify({
+            sessionId: SESSION,
+            runId: 'pre-fix',
+            hypothesisId: hypothesisId,
+            location: location,
+            message: message,
+            data: data || {},
+            timestamp: Date.now()
+          })
+        }).catch(function () {});
+      }
+      send('A', 'leeacoins/index.html:boot', 'page boot', {
+        protocol: location.protocol,
+        href: location.href,
+        readyState: document.readyState
+      });
+      window.addEventListener('error', function (e) {
+        send('E', 'leeacoins/index.html:error', 'window error', {
+          message: String(e.message || ''),
+          filename: String(e.filename || ''),
+          lineno: e.lineno || 0
+        });
+      });
+      window.addEventListener('unhandledrejection', function (e) {
+        send('E', 'leeacoins/index.html:rejection', 'unhandled rejection', {
+          reason: String((e.reason && (e.reason.message || e.reason)) || e.reason)
+        });
+      });
+      setTimeout(function () {
+        var root = document.getElementById('root');
+        var moduleEntries = (performance.getEntriesByType('resource') || []).filter(function (r) {
+          return /assets\/index-.*\.js/.test(r.name);
+        }).map(function (r) {
+          return { name: r.name, duration: r.duration, transferSize: r.transferSize, responseStatus: r.responseStatus };
+        });
+        send('A', 'leeacoins/index.html:mount-check', 'mount check', {
+          protocol: location.protocol,
+          rootChildCount: root ? root.children.length : -1,
+          rootEmpty: !!(root && root.children.length === 0),
+          moduleEntries: moduleEntries
+        });
+        send('C', 'leeacoins/index.html:path-check', 'asset path check', {
+          baseURI: document.baseURI,
+          scriptSrc: (document.querySelector('script[type=module]') || {}).src || null
+        });
+      }, 2500);
+    })();
+    </script>
+    <!-- #endregion -->
+  </body>
+</html>

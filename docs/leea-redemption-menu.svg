@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+  <rect width="1100" height="720" fill="#f7f7f5"/>
+  <text x="550" y="42" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#111">Diagram B  Redemption menu (choose exactly one)</text>
+  <text x="550" y="68" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#555">1 LEEA may be exchanged for the equivalent value of one of the following</text>
+
+  <rect x="40" y="100" width="200" height="80" rx="8" fill="#1a1a1a"/>
+  <text x="140" y="148" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">1 LEEA</text>
+
+  <text x="280" y="148" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#b45309">OR</text>
+  <line x1="240" y1="140" x2="320" y2="140" stroke="#888" stroke-width="2"/>
+
+  <!-- options list -->
+  <g font-family="Helvetica, Arial, sans-serif">
+    <rect x="340" y="95" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="127" font-size="16" fill="#111"><tspan font-weight="700">50 L</tspan> Water</text>
+    <text x="1020" y="127" text-anchor="end" font-size="13" fill="#666">�50 vs basket kgHL</text>
+
+    <rect x="340" y="160" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="192" font-size="16" fill="#111"><tspan font-weight="700">10 kg</tspan> Rice</text>
+    <text x="1020" y="192" text-anchor="end" font-size="13" fill="#666">�10 vs basket</text>
+
+    <rect x="340" y="225" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="257" font-size="16" fill="#111"><tspan font-weight="700">2 kg</tspan> Fish or Meat</text>
+    <text x="1020" y="257" text-anchor="end" font-size="13" fill="#666">�2 vs basket fish</text>
+
+    <rect x="340" y="290" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="322" font-size="16" fill="#111"><tspan font-weight="700">10 kg</tspan> Steel</text>
+    <text x="1020" y="322" text-anchor="end" font-size="13" fill="#666">�10 vs basket</text>
+
+    <rect x="340" y="355" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="387" font-size="16" fill="#111"><tspan font-weight="700">150 kg</tspan> Construction Sand</text>
+    <text x="1020" y="387" text-anchor="end" font-size="13" fill="#666">�150 vs basket</text>
+
+    <rect x="340" y="420" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="452" font-size="16" fill="#111"><tspan font-weight="700">60 kWh</tspan> Electricity</text>
+    <text x="1020" y="452" text-anchor="end" font-size="13" fill="#666">�60 vs basket</text>
+
+    <rect x="340" y="485" width="720" height="52" rx="6" fill="#fff" stroke="#222" stroke-width="1.5"/>
+    <text x="360" y="517" font-size="16" fill="#111"><tspan font-weight="700">100 sq ft</tspan> Agricultural Land Index</text>
+    <text x="1020" y="517" text-anchor="end" font-size="13" fill="#666">�100 vs basket</text>
+  </g>
+
+  <rect x="40" y="570" width="1020" height="120" rx="10" fill="#fff" stroke="#888" stroke-width="1"/>
+  <text x="550" y="605" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#111">Quote rule (v1)  for approval</text>
+  <text x="70" y="640" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">commodityQty = wholeLeeaAmount � option.qty    �    Partial LEEA rejected (HTTP 400)</text>
+  <text x="70" y="668" font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#222">Example: redeem 3 LEEA for rice � 3 � 10 kg = 30 kg rice; balance decreases by 3 LEEA; status = pending fulfillment</text>
+</svg>

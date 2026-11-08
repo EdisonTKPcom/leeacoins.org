@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="700" viewBox="0 0 1100 700">
+  <rect width="1100" height="700" fill="#f7f7f5"/>
+  <text x="550" y="40" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#111">Diagram D  Redeem sequence (happy path)</text>
+  <text x="550" y="66" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#555">Whole-LEEA debit � single commodity selection � pending fulfillment</text>
+
+  <!-- swimlane headers -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="700">
+    <rect x="40" y="90" width="200" height="36" rx="4" fill="#1a1a1a"/>
+    <text x="140" y="113" text-anchor="middle" fill="#fff">User</text>
+    <rect x="280" y="90" width="220" height="36" rx="4" fill="#1a1a1a"/>
+    <text x="390" y="113" text-anchor="middle" fill="#fff">Client UI</text>
+    <rect x="540" y="90" width="240" height="36" rx="4" fill="#1a1a1a"/>
+    <text x="660" y="113" text-anchor="middle" fill="#fff">Express API</text>
+    <rect x="820" y="90" width="240" height="36" rx="4" fill="#1a1a1a"/>
+    <text x="940" y="113" text-anchor="middle" fill="#fff">SQLite ledger</text>
+  </g>
+
+  <!-- steps -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#222">
+    <!-- 1 login -->
+    <circle cx="60" cy="180" r="12" fill="#1a1a1a"/><text x="60" y="184" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">1</text>
+    <text x="90" y="185">Login / register</text>
+    <line x1="200" y1="180" x2="540" y2="180" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="660" y="175" text-anchor="middle">POST /api/auth/login</text>
+    <line x1="780" y1="180" x2="820" y2="180" stroke="#888" stroke-width="1.5"/>
+    <text x="940" y="175" text-anchor="middle">session + wallet row</text>
+
+    <!-- 2 view balance -->
+    <circle cx="60" cy="250" r="12" fill="#1a1a1a"/><text x="60" y="254" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">2</text>
+    <text x="90" y="255">Open Wallet</text>
+    <line x1="200" y1="250" x2="540" y2="250" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="660" y="245" text-anchor="middle">GET /api/wallet</text>
+    <line x1="780" y1="250" x2="820" y2="250" stroke="#888" stroke-width="1.5"/>
+    <text x="940" y="245" text-anchor="middle">leea_balance</text>
+
+    <!-- 3 select + quote -->
+    <circle cx="60" cy="330" r="12" fill="#1a1a1a"/><text x="60" y="334" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">3</text>
+    <text x="90" y="325">Pick OR option</text>
+    <text x="90" y="342">+ whole LEEA qty</text>
+    <line x1="200" y1="330" x2="390" y2="330" stroke="#888" stroke-width="1.5"/>
+    <text x="390" y="318" text-anchor="middle">live quote UI</text>
+    <line x1="500" y1="330" x2="540" y2="330" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="660" y="325" text-anchor="middle">POST /api/redeem/quote</text>
+    <text x="940" y="325" text-anchor="middle">read REDEMPTION_OPTIONS</text>
+
+    <!-- 4 confirm -->
+    <circle cx="60" cy="420" r="12" fill="#1a1a1a"/><text x="60" y="424" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">4</text>
+    <text x="90" y="425">Confirm redeem</text>
+    <line x1="200" y1="420" x2="540" y2="420" stroke="#888" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="660" y="415" text-anchor="middle">POST /api/redeem</text>
+    <line x1="780" y1="420" x2="820" y2="420" stroke="#888" stroke-width="1.5"/>
+    <text x="940" y="408" text-anchor="middle">debit wallet</text>
+    <text x="940" y="428" text-anchor="middle">+ ledger entry</text>
+    <text x="940" y="448" text-anchor="middle">+ request pending</text>
+
+    <!-- 5 admin -->
+    <circle cx="60" cy="520" r="12" fill="#b45309"/><text x="60" y="524" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">5</text>
+    <text x="90" y="515">Admin (ops)</text>
+    <text x="90" y="532">fulfill / reject</text>
+    <line x1="200" y1="520" x2="540" y2="520" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="660" y="515" text-anchor="middle" fill="#b45309">PATCH &/redemptions/:id</text>
+    <line x1="780" y1="520" x2="820" y2="520" stroke="#b45309" stroke-width="1.5"/>
+    <text x="940" y="515" text-anchor="middle" fill="#b45309">status update</text>
+  </g>
+
+  <rect x="40" y="580" width="1020" height="90" rx="10" fill="#fff" stroke="#888" stroke-width="1"/>
+  <text x="550" y="615" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#111">Failure paths (must be tested)</text>
+  <text x="70" y="645" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#222">Insufficient balance � 400, no debit � Partial LEEA (e.g. 1.5) � 400 � Unknown optionId � 400 � Unauthenticated � 401</text>
+</svg>
